@@ -7,14 +7,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        deepVoid: '#121212', // deepCharcoal
-        plasma: '#D4AF37',   // mutedGold
-        ghost: '#FAFAFA',    // cream
-        graphite: '#1A1A1A'  // slightly lighter charcoal
+        deepVoid: '#0F172A', // slate-900 (deep mountain night)
+        plasma: '#E17055',   // sunset orange (warm highlight)
+        ghost: '#F8FAFC',    // slate-50 (snowy off-white)
+        graphite: '#1E293B', // slate-800 (rock/granite)
+        forest: '#2D3748',   // dark green/gray
+        alpine: '#38B2AC'    // teal/glacier blue
       },
       fontFamily: {
-        sans: ['Sora', 'sans-serif'],
-        drama: ['"Instrument Serif"', 'serif'],
+        sans: ['Manrope', 'sans-serif'],
+        drama: ['Cinzel', 'serif'],
         mono: ['"Fira Code"', 'monospace'],
       }
     },
