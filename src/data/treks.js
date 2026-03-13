@@ -5,7 +5,7 @@ export const treks = [
   // 1. Everest Region
   {
     id: 1, name: 'Everest Base Camp', difficulty: 'hard', days: 14, interests: ['mountains', 'culture'], altitude: '5,364m', price: 1400, crowd: 'red',
-    image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=800&auto=format&fit=crop",
+    image: "https://plus.unsplash.com/premium_photo-1697729963745-8e14a76d48c2?q=80&w=1121&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description: "The classic trek to the foot of the world's highest peak. Pass through Sherpa villages, ancient monasteries, and breathtaking mountain vistas.",
     itinerary: [
       { day: 1, place: 'Kathmandu', desc: 'Arrive and hotel check-in. Team briefing and gear check.', alt: '1,400m' },
@@ -26,7 +26,7 @@ export const treks = [
   },
   {
     id: 2, name: 'Gokyo Lakes', difficulty: 'hard', days: 13, interests: ['mountains', 'offbeat'], altitude: '5,357m', price: 1350, crowd: 'yellow',
-    image: "https://images.unsplash.com/photo-1543731068-7e0f5beff43a?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1505058439590-d86bd136dcec?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description: "A spectacular alternative to EBC, featuring pristine turquoise alpine lakes and the magnificent Gokyo Ri viewpoint.",
     itinerary: [
       { day: 1, place: 'Kathmandu → Lukla → Phakding', desc: 'Flight to Lukla, trek to Phakding.', alt: '2,610m' },
@@ -44,7 +44,7 @@ export const treks = [
   },
   {
     id: 3, name: 'Three Passes Trek', difficulty: 'hard', days: 20, interests: ['mountains', 'extreme'], altitude: '5,535m', price: 1800, crowd: 'yellow',
-    image: "https://images.unsplash.com/photo-1486915309851-b0cc1f8a0084?q=80&w=800&auto=format&fit=crop",
+    image: "https://thumbs.dreamstime.com/b/mount-everest-lhotse-nepal-himalayas-mountains-sunset-evening-view-gokyo-valley-three-passes-mt-base-camp-trek-khumbu-145881355.jpg",
     description: "The ultimate Everest circuit crossing Kongma La, Cho La, and Renjo La passes. For experienced trekkers only.",
     itinerary: [
       { day: 1, place: 'Lukla → Phakding', desc: 'Arrive and start trek.', alt: '2,610m' },
@@ -58,7 +58,7 @@ export const treks = [
   // 2. Annapurna Region
   {
     id: 4, name: 'Annapurna Circuit', difficulty: 'hard', days: 18, interests: ['mountains', 'diversity'], altitude: '5,416m', price: 1200, crowd: 'yellow',
-    image: "https://images.unsplash.com/photo-1588693959604-db5eec931566?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1635350180477-5a91e936880c?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description: "A legendary route circling the Annapurna massif through diverse landscapes—from lush rice paddies to high desert plateaus.",
     itinerary: [
       { day: 1, place: 'Kathmandu → Besisahar', desc: 'Drive to Besisahar trailhead.', alt: '760m' },
@@ -72,7 +72,7 @@ export const treks = [
   },
   {
     id: 5, name: 'Annapurna Base Camp', difficulty: 'moderate', days: 12, interests: ['mountains'], altitude: '4,130m', price: 900, crowd: 'red',
-    image: "https://images.unsplash.com/photo-1517584343160-5f284ded0915?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1671181366687-47530c4dbe4b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description: "Trek directly into the heart of the Annapurna Sanctuary, surrounded by a 360-degree amphitheater of peaks.",
     itinerary: [
       { day: 1, place: 'Pokhara → Nayapul → Ghandruk', desc: 'Drive and trek to Gurung village.', alt: '1,940m' },
@@ -85,7 +85,7 @@ export const treks = [
   },
   {
     id: 6, name: 'Mardi Himal', difficulty: 'moderate', days: 7, interests: ['mountains', 'offbeat'], altitude: '4,500m', price: 600, crowd: 'green',
-    image: "https://images.unsplash.com/photo-1510662145379-13537db782dc?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1545662618-66de187bbf69?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description: "A shorter, off-the-beaten-path trek offering stunning close-up views of Machhapuchhre and the Annapurna range.",
     itinerary: [
       { day: 1, place: 'Pokhara → Kande → Pothana', desc: 'Drive to Kande, trek to Pothana village.', alt: '1,890m' },
@@ -99,7 +99,7 @@ export const treks = [
   },
   {
     id: 7, name: 'Poon Hill', difficulty: 'easy', days: 5, interests: ['sunrise', 'culture'], altitude: '3,210m', price: 400, crowd: 'red',
-    image: "https://images.unsplash.com/photo-1581452906190-3882747161b3?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1589801561572-d71f31807775?q=80&w=1158&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description: "A short, easy trek famous for its stunning golden sunrise over the Dhaulagiri and Annapurna ranges.",
     itinerary: [
       { day: 1, place: 'Pokhara → Nayapul → Tikhedhunga', desc: 'Drive and short trek.', alt: '1,540m' },
@@ -111,7 +111,7 @@ export const treks = [
   },
   {
     id: 8, name: 'Khopra Danda', difficulty: 'moderate', days: 8, interests: ['mountains', 'offbeat'], altitude: '3,660m', price: 650, crowd: 'green',
-    image: "https://images.unsplash.com/photo-1544735716-43b9e4a3c200?q=80&w=800&auto=format&fit=crop",
+    image: "https://www.nepalmountaintrekkers.com/wp-content/uploads/2021/02/khopra-danda.jpg",
     description: "An incredible ridge trek near Annapurna offering community lodge stays and a trip to the sacred Khayer Lake.",
     itinerary: [
       { day: 1, place: 'Pokhara → Ghandruk', desc: 'Start trek.', alt: '1,940m' },
@@ -124,7 +124,7 @@ export const treks = [
   // 3. Langtang & Helambu
   {
     id: 9, name: 'Langtang Valley', difficulty: 'moderate', days: 10, interests: ['culture', 'mountains'], altitude: '3,870m', price: 700, crowd: 'yellow',
-    image: "https://images.unsplash.com/photo-1628169212023-e66fa61d02c6?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1643548947288-fbf86caf414a?q=80&w=1102&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description: "The 'Valley of Glaciers'. Quick access from Kathmandu, offering Tamang culture and rebuilt mountain villages.",
     itinerary: [
       { day: 1, place: 'Kathmandu → Syabrubesi', desc: 'Drive.', alt: '1,550m' },
@@ -136,7 +136,7 @@ export const treks = [
   },
   {
     id: 10, name: 'Gosainkunda Lakes', difficulty: 'moderate', days: 7, interests: ['culture'], altitude: '4,380m', price: 550, crowd: 'yellow',
-    image: "https://images.unsplash.com/photo-1512401826027-04c97eb70b13?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1713670959170-176c7d31b93f?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description: "A pilgrimage route connecting sacred frozen lakes high in the Langtang National Park.",
     itinerary: [
       { day: 1, place: 'Kathmandu → Dhunche', desc: 'Drive.', alt: '1,950m' },
@@ -147,7 +147,7 @@ export const treks = [
   },
   {
     id: 11, name: 'Tamang Heritage Trail', difficulty: 'easy', days: 8, interests: ['culture', 'diversity'], altitude: '3,165m', price: 600, crowd: 'green',
-    image: "https://images.unsplash.com/photo-1627916298647-750c187bc97b?q=80&w=800&auto=format&fit=crop",
+    image: "https://www.nepalecotrekking.com/public/uploads/tamang-heritage-trail.webp",
     description: "Immerse yourself in Tibetan/Tamang culture, homestays, and hot springs near the Tibetan border.",
     itinerary: [
       { day: 1, place: 'Kathmandu → Syabrubesi', desc: 'Drive.', alt: '1,550m' },
