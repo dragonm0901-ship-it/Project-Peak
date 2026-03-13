@@ -39,7 +39,7 @@ const ReviewSlider = () => {
   }, []);
 
   return (
-    <section className="py-24 bg-richBlue relative overflow-hidden flex justify-center items-center w-full px-8">
+    <section className="pt-24 pb-40 bg-richBlue relative overflow-hidden flex justify-center items-center w-full px-8">
       <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none flex justify-center items-center">
         <svg className="w-[120%] h-[120%] text-pureWhite" fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none">
           <polygon points="0,100 100,0 100,100" />

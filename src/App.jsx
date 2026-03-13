@@ -8,7 +8,6 @@ import CurrencyExchange from "./components/CurrencyExchange";
 import RecommendationEngine from "./components/RecommendationEngine";
 import DynamicItineraryBuilder from "./components/DynamicItineraryBuilder";
 import SustainabilityBadge from "./components/SustainabilityBadge";
-import CommunityHub from "./components/CommunityHub";
 import TrustFeatures from "./components/TrustFeatures";
 import EquipmentChecklist from "./components/EquipmentChecklist";
 import Hero from './components/Hero';
@@ -112,7 +111,7 @@ const GlobalInteractions = () => {
 
 const Footer = () => {
   return (
-    <footer id="about" className="w-full bg-richBlue text-pureWhite rounded-t-[4rem] px-8 md:px-16 pt-24 pb-12 relative z-20 mt-[-4rem]">
+    <footer id="about" className="w-full bg-richBlue text-pureWhite rounded-t-[4rem] px-8 md:px-16 pt-24 pb-12 relative z-20">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-16 mb-24">
         <div className="flex-1">
           <h2 className="font-sans text-4xl mb-4 tracking-widest italic font-bold">We Travel Nepal</h2>
@@ -177,7 +176,6 @@ function App() {
       <GlobalInteractions />
       {!preloaderDone && <Preloader onComplete={() => setPreloaderDone(true)} />}
       <WhatsAppFloat />
-      <CommunityHub />
 
       <div style={{ opacity: preloaderDone ? 1 : 0, transition: 'opacity 0.8s ease-in-out', backgroundColor: '#F8F9FA' }}>
         <Navbar />
