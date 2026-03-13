@@ -79,7 +79,7 @@ const Navbar = () => {
                          <button
                           key={curr}
                           onClick={() => setCurrency(curr)}
-                          className={`px-2 py-1 rounded transition-colors ${currency === curr ? 'bg-forestGreen/20 text-forestGreen font-bold' : 'hover:bg-offWhite'}`}
+                          className={`px-2 py-1 rounded transition-colors ${currency === curr ? 'bg-softRed/20 text-softRed font-bold' : 'hover:bg-offWhite'}`}
                          >
                            {curr}
                          </button>
@@ -93,7 +93,7 @@ const Navbar = () => {
                          <button
                           key={lang}
                           onClick={() => setLanguage(lang)}
-                          className={`px-2 py-1 rounded transition-colors ${language === lang ? 'bg-forestGreen/20 text-forestGreen font-bold' : 'hover:bg-offWhite'}`}
+                          className={`px-2 py-1 rounded transition-colors ${language === lang ? 'bg-softRed/20 text-softRed font-bold' : 'hover:bg-offWhite'}`}
                          >
                            {lang}
                          </button>

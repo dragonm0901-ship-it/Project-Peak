@@ -1,46 +1,118 @@
-import React, { useState } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Treks = [
   {
     id: 1,
-    name: 'Everest Base Camp',
-    image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=800&auto=format&fit=crop',
-    altitude: '5,364m',
-    weather: '-5°C',
-    duration: '14 Days',
-    price: '$1,299'
+    title: "Everest Base Camp",
+    duration: "14 Days",
+    difficulty: "Hard",
+    price: "$1,400",
+    image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=2000&auto=format&fit=crop", // Assuming "Cinematic wide shot of Mt. Everest at sunrise, orange glow on snow-capped peaks, colorful prayer flags in foreground, 8k resolution, National Geographic style."
+    altitude: "5,364m",
+    weather: "-5°C, Clear",
+    status: "Open"
   },
   {
     id: 2,
-    name: 'Annapurna Circuit',
-    image: 'https://images.unsplash.com/photo-1506462945848-ac8ea6f609cc?q=80&w=800&auto=format&fit=crop',
-    altitude: '5,416m',
-    weather: '-2°C',
-    duration: '16 Days',
-    price: '$1,099'
+    title: "Annapurna Circuit",
+    duration: "16 Days",
+    difficulty: "Hard",
+    price: "$1,200",
+    image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=2000&auto=format&fit=crop", // "Golden Hour", "Cinematic Lighting", "Wide Angle"
+    altitude: "5,416m",
+    weather: "-2°C, Snow",
+    status: "Clear"
   },
   {
     id: 3,
-    name: 'Mardi Himal Trek',
-    image: 'https://images.unsplash.com/photo-1585016495481-91613a3ab1bc?q=80&w=800&auto=format&fit=crop',
-    altitude: '4,500m',
-    weather: '2°C',
-    duration: '7 Days',
-    price: '$699'
+    title: "Phewa Lake Pokhara",
+    duration: "5 Days",
+    difficulty: "Easy",
+    price: "$450",
+    image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=2000&auto=format&fit=crop", // "Aerial drone view of Phewa Lake Pokhara, reflection of Machhapuchhre (Fishtail) mountain on calm water, colorful wooden boats, morning mist, hyper-realistic."
+    altitude: "822m",
+    weather: "22°C, Sunny",
+    status: "Open"
+  },
+  {
+    id: 4,
+    title: "Upper Mustang",
+    duration: "15 Days",
+    difficulty: "Moderate",
+    price: "$1,800",
+    image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=2000&auto=format&fit=crop", // "Red desert cliffs of Upper Mustang, ancient mud-brick village of Lo Manthang, harsh sunlight creating deep shadows, nomadic landscape, cinematic 35mm lens."
+    altitude: "3,840m",
+    weather: "10°C, Windy",
+    status: "Open"
+  },
+  {
+    id: 5,
+    title: "Rara Lake (Far West)",
+    duration: "9 Days",
+    difficulty: "Moderate",
+    price: "$1,100",
+    image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=2000&auto=format&fit=crop", // Off the Grid trend
+    altitude: "2,990m",
+    weather: "15°C, Clear",
+    status: "Open"
+  },
+  {
+    id: 6,
+    title: "Kathmandu Durbar Heritage",
+    duration: "1 Day",
+    difficulty: "Easy",
+    price: "$50",
+    image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=2000&auto=format&fit=crop", // "Close up of intricate wood carvings at Bhaktapur Durbar Square, warm evening sunlight, local devotees in traditional dress, blurred background, heritage photography."
+    altitude: "1,400m",
+    weather: "25°C, Sunny",
+    status: "Open"
   }
 ];
 
 const PopularTreks = () => {
-  const [bookingState, setBookingState] = useState(null); // { id: 1, status: 'locking' | 'locked' }
+  const containerRef = useRef(null);
+  const [bookingState, setBookingState] = useState({});
 
-  const handleBooking = (id) => {
-    setBookingState({ id, status: 'locking' });
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      const cards = gsap.utils.toArray('.trek-card');
+
+      cards.forEach((card) => {
+        gsap.fromTo(card,
+          { y: 100, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 85%",
+              toggleActions: "play none none reverse"
+            }
+          }
+        );
+      });
+    }, containerRef);
+    return () => ctx.revert();
+  }, []);
+
+  const handleBook = (id) => {
+    setBookingState(prev => ({ ...prev, [id]: 'loading' }));
 
     // Simulate API call to lock slot
     setTimeout(() => {
-      setBookingState({ id, status: 'locked' });
-      // In a real app, redirect to payment gateway here
-      setTimeout(() => setBookingState(null), 3000); // Reset for demo purposes
+      setBookingState(prev => ({ ...prev, [id]: 'locked' }));
+
+      // Reset after 3 seconds to simulate redirect
+      setTimeout(() => {
+        setBookingState(prev => ({ ...prev, [id]: null }));
+        // alert('Redirecting to Payment Gateway...');
+      }, 3000);
     }, 1500);
   };
 
@@ -54,38 +126,27 @@ const PopularTreks = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {Treks.map((trek) => (
-            <div key={trek.id} className="group rounded-3xl overflow-hidden bg-offWhite border border-richBlue/10 shadow-lg hover:shadow-2xl transition-all duration-500">
-
-              {/* Image & Widgets */}
-              <div className="relative h-64 overflow-hidden">
+            <div key={trek.id} className="trek-card group relative rounded-[2rem] overflow-hidden bg-offWhite border border-richBlue/5 hover:border-richBlue/20 transition-all duration-500 hover:shadow-2xl">
+              {/* Image Container */}
+              <div className="relative h-[300px] w-full overflow-hidden">
                 <img
                   src={trek.image}
-                  alt={trek.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  alt={trek.title}
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-richBlue/80 via-transparent to-transparent"></div>
 
                 {/* Live Widgets Overlay */}
-                <div className="absolute top-4 left-4 flex gap-2">
-                  <div className="bg-pureWhite/90 backdrop-blur-sm text-richBlue px-3 py-1.5 rounded-full font-sans text-xs font-bold flex items-center gap-1 shadow-md">
-                    <svg className="w-3 h-3 text-forestGreen" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 2a8 8 0 100 16 8 8 0 000-16zM9 9V5a1 1 0 112 0v4a1 1 0 11-2 0zm0 4v-2a1 1 0 112 0v2a1 1 0 11-2 0z" clipRule="evenodd" /></svg>
-                    Live
+                <div className="absolute top-4 left-4 right-4 flex justify-between">
+                  <div className="bg-pureWhite/90 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center gap-2 shadow-lg">
+                    <svg className="w-3 h-3 text-richBlue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                    <span className="text-[10px] font-sans font-bold text-richBlue">{trek.altitude}</span>
                   </div>
-                </div>
-
-                <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end">
-                   <div className="flex flex-col gap-1 text-pureWhite font-sans">
-                     <span className="text-xs uppercase tracking-wider opacity-80 flex items-center gap-1">
-                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 11l7-7 7 7M5 19l7-7 7 7" /></svg>
-                        {trek.altitude}
-                     </span>
-                     <span className="text-xs uppercase tracking-wider opacity-80 flex items-center gap-1">
-                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" /></svg>
-                        {trek.weather} (Current)
-                     </span>
-                   </div>
+                  <div className="bg-pureWhite/90 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center gap-2 shadow-lg">
+                    <svg className="w-3 h-3 text-softRed" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" /></svg>
+                    <span className="text-[10px] font-sans font-bold text-richBlue">{trek.weather}</span>
+                  </div>
                 </div>
               </div>
 
@@ -93,46 +154,46 @@ const PopularTreks = () => {
               <div className="p-5 md:p-8">
                 <h3 className="font-drama text-3xl text-richBlue mb-2 italic">{trek.name}</h3>
 
-                <div className="flex justify-between items-center mb-8 pb-6 border-b border-richBlue/10">
-                  <div className="flex flex-col">
-                    <span className="font-sans text-xs text-richBlue/50 uppercase tracking-wider">Duration</span>
-                    <span className="font-sans font-bold text-richBlue">{trek.duration}</span>
+                <div className="flex gap-4 mb-8">
+                  <div className="flex flex-col gap-1">
+                    <span className="text-[10px] text-richBlue/50 uppercase tracking-widest font-bold">Duration</span>
+                    <span className="text-sm font-sans text-richBlue font-semibold">{trek.duration}</span>
                   </div>
-                  <div className="flex flex-col text-right">
-                    <span className="font-sans text-xs text-richBlue/50 uppercase tracking-wider">From</span>
-                    <span className="font-sans font-bold text-forestGreen text-lg">{trek.price}</span>
+                  <div className="w-[1px] bg-richBlue/10"></div>
+                  <div className="flex flex-col gap-1">
+                    <span className="text-[10px] text-richBlue/50 uppercase tracking-widest font-bold">Difficulty</span>
+                    <span className="text-sm font-sans text-richBlue font-semibold">{trek.difficulty}</span>
                   </div>
                 </div>
 
-                {/* Booking Logic */}
+                {/* Interactive Booking Button */}
                 <button
-                  onClick={() => handleBooking(trek.id)}
-                  disabled={bookingState?.id === trek.id}
-                  className={`w-full py-4 rounded-full font-sans font-bold uppercase tracking-widest text-sm transition-all flex justify-center items-center gap-2 ${
-                    bookingState?.id === trek.id
-                      ? bookingState.status === 'locking'
-                        ? 'bg-softRed/20 text-softRed cursor-not-allowed'
-                        : 'bg-forestGreen text-pureWhite'
-                      : 'bg-softRed text-pureWhite hover:bg-softRed/90 hover:shadow-lg hover:-translate-y-1'
-                  }`}
+                  onClick={() => handleBook(trek.id)}
+                  disabled={bookingState[trek.id] === 'locked' || bookingState[trek.id] === 'loading'}
+                  className={`w-full py-4 rounded-full font-sans uppercase tracking-widest text-xs font-bold transition-all flex items-center justify-center gap-2
+                    ${bookingState[trek.id] === 'locked'
+                      ? 'bg-softRed/10 text-softRed border border-softRed/20'
+                      : bookingState[trek.id] === 'loading'
+                        ? 'bg-richBlue/10 text-richBlue border border-richBlue/10'
+                        : 'bg-richBlue text-pureWhite hover:bg-richBlue/90 shadow-md'
+                    }
+                  `}
                 >
-                  {bookingState?.id === trek.id ? (
-                    bookingState.status === 'locking' ? (
-                      <>
-                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-softRed" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                        </svg>
-                        Checking Availability...
-                      </>
-                    ) : (
-                      <>
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                        Slot Locked (10:00)
-                      </>
-                    )
+                  {bookingState[trek.id] === 'locked' ? (
+                    <>
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+                      Slot Locked (10:00)
+                    </>
+                  ) : bookingState[trek.id] === 'loading' ? (
+                    <>
+                      <div className="w-4 h-4 border-2 border-richBlue/30 border-t-richBlue rounded-full animate-spin"></div>
+                      Checking...
+                    </>
                   ) : (
-                    'Book Trek'
+                    <>
+                      Book Real-Time
+                      <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                    </>
                   )}
                 </button>
               </div>
