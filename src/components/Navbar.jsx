@@ -149,7 +149,7 @@ const Navbar = () => {
           <div className="flex justify-between items-center border-b border-richBlue/10 pb-4">
              <span className="font-sans text-xs uppercase tracking-widest text-richBlue/50 font-bold">Language</span>
              <div className="flex gap-2 font-sans text-xs">
-               {['EN', 'FR', 'DE'].map(lang => (
+               {['EN', 'FR', 'DE', 'ZH'].map(lang => (
                  <button key={lang} onClick={() => { setLanguage(lang); setIsMobileMenuOpen(false); }} className={`px-3 py-1.5 rounded-full transition-colors ${language === lang ? 'bg-softRed/20 text-softRed font-bold' : 'bg-offWhite'}`}>
                    {lang}
                  </button>
