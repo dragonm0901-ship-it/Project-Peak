@@ -45,7 +45,7 @@ const PopularTreks = () => {
   };
 
   return (
-    <section id="treks" className="py-32 px-8 w-full bg-pureWhite flex flex-col items-center">
+    <section id="treks" className="py-16 md:py-32 px-4 md:px-8 w-full bg-pureWhite flex flex-col items-center">
       <div className="w-full max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="font-drama text-5xl md:text-6xl text-richBlue mb-4 italic">Iconic Expeditions</h2>
@@ -90,7 +90,7 @@ const PopularTreks = () => {
               </div>
 
               {/* Content */}
-              <div className="p-8">
+              <div className="p-5 md:p-8">
                 <h3 className="font-drama text-3xl text-richBlue mb-2 italic">{trek.name}</h3>
 
                 <div className="flex justify-between items-center mb-8 pb-6 border-b border-richBlue/10">
