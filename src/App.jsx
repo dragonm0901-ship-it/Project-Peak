@@ -4,6 +4,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
 
 import Navbar from './components/Navbar';
+import CurrencyExchange from "./components/CurrencyExchange";
+import RecommendationEngine from "./components/RecommendationEngine";
+import DynamicItineraryBuilder from "./components/DynamicItineraryBuilder";
+import SustainabilityBadge from "./components/SustainabilityBadge";
+import CommunityHub from "./components/CommunityHub";
+import TrustFeatures from "./components/TrustFeatures";
+import EquipmentChecklist from "./components/EquipmentChecklist";
 import Hero from './components/Hero';
 import TrekkingPlanner from './components/TrekkingPlanner';
 import PopularTreks from './components/PopularTreks';
@@ -51,7 +58,7 @@ const Preloader = ({ onComplete }) => {
       <div ref={bgRef} className="absolute inset-0 bg-richBlue w-full h-full transform origin-top"></div>
       <div
         ref={textRef}
-        className="relative z-10 font-drama text-pureWhite text-6xl md:text-8xl italic opacity-0 translate-y-10"
+        className="relative z-10 font-sans text-pureWhite text-6xl md:text-8xl italic opacity-0 translate-y-10"
       >
         We Travel Nepal
       </div>
@@ -175,22 +182,22 @@ const Footer = () => {
     <footer id="about" className="w-full bg-richBlue text-pureWhite rounded-t-[4rem] px-8 md:px-16 pt-24 pb-12 relative z-20 mt-[-4rem]">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-16 mb-24">
         <div className="flex-1">
-          <h2 className="font-drama text-4xl mb-4 tracking-widest italic font-bold">We Travel Nepal</h2>
+          <h2 className="font-sans text-4xl mb-4 tracking-widest italic font-bold">We Travel Nepal</h2>
           <p className="font-sans font-light text-sm text-pureWhite/60 max-w-xs leading-relaxed uppercase tracking-wider">
             High-performance booking engine for the unique logistics of the Himalayas.
           </p>
         </div>
         <div className="flex gap-16 font-sans text-sm tracking-widest uppercase font-semibold">
           <div className="flex flex-col gap-4">
-             <span className="text-forestGreen mb-2">Platform</span>
-             <a href="#planner" className="text-pureWhite/70 hover:text-forestGreen transition-colors">Trekking Planner</a>
-             <a href="#treks" className="text-pureWhite/70 hover:text-forestGreen transition-colors">Popular Treks</a>
-             <a href="#" className="text-pureWhite/70 hover:text-forestGreen transition-colors">Permits</a>
+             <span className="text-softRed mb-2">Platform</span>
+             <a href="#planner" className="text-pureWhite/70 hover:text-softRed transition-colors">Trekking Planner</a>
+             <a href="#treks" className="text-pureWhite/70 hover:text-softRed transition-colors">Popular Treks</a>
+             <a href="#" className="text-pureWhite/70 hover:text-softRed transition-colors">Permits</a>
           </div>
           <div className="flex flex-col gap-4">
-             <span className="text-forestGreen mb-2">Company</span>
-             <a href="#" className="text-pureWhite/70 hover:text-forestGreen transition-colors">About Us</a>
-             <a href="#" className="text-pureWhite/70 hover:text-forestGreen transition-colors">Contact</a>
+             <span className="text-softRed mb-2">Company</span>
+             <a href="#" className="text-pureWhite/70 hover:text-softRed transition-colors">About Us</a>
+             <a href="#" className="text-pureWhite/70 hover:text-softRed transition-colors">Contact</a>
           </div>
         </div>
       </div>
@@ -238,13 +245,20 @@ function App() {
       {!preloaderDone && <Preloader onComplete={() => setPreloaderDone(true)} />}
       <CustomCursor />
       <WhatsAppFloat />
+      <CommunityHub />
 
       <div style={{ opacity: preloaderDone ? 1 : 0, transition: 'opacity 0.8s ease-in-out', backgroundColor: '#F8F9FA' }}>
         <Navbar />
+        <div className="fixed top-24 right-6 z-40"><CurrencyExchange /></div>
         <main>
           <Hero isReady={preloaderDone} />
+          <RecommendationEngine />
           <TrekkingPlanner />
+          <SustainabilityBadge />
           <PopularTreks />
+          <DynamicItineraryBuilder />
+          <TrustFeatures />
+          <EquipmentChecklist />
           <ReviewSlider />
         </main>
         <Footer />

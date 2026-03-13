@@ -34,12 +34,12 @@ const Navbar = () => {
   return (
     <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 w-full">
       <nav ref={navRef} className="flex items-center justify-between px-6 py-3 rounded-full transition-all duration-300 w-full max-w-5xl text-pureWhite relative">
-        <div className="font-drama text-2xl brand-text tracking-widest italic font-bold">We Travel Nepal</div>
+        <div className="font-sans text-2xl brand-text tracking-widest italic font-bold">We Travel Nepal</div>
 
         <div className="hidden md:flex gap-8 items-center font-sans uppercase tracking-widest text-xs font-semibold">
-          <a href="#planner" className="nav-link hover-lift hover:text-forestGreen transition-colors">Planner</a>
-          <a href="#treks" className="nav-link hover-lift hover:text-forestGreen transition-colors">Treks & Tours</a>
-          <a href="#about" className="nav-link hover-lift hover:text-forestGreen transition-colors">About</a>
+          <a href="#planner" className="nav-link hover-lift hover:text-softRed transition-colors">Planner</a>
+          <a href="#treks" className="nav-link hover-lift hover:text-softRed transition-colors">Treks & Tours</a>
+          <a href="#about" className="nav-link hover-lift hover:text-softRed transition-colors">About</a>
         </div>
 
         <div className="flex items-center gap-4">
@@ -63,7 +63,7 @@ const Navbar = () => {
                          <button
                           key={curr}
                           onClick={() => setCurrency(curr)}
-                          className={`px-2 py-1 rounded transition-colors ${currency === curr ? 'bg-forestGreen/20 text-forestGreen font-bold' : 'hover:bg-offWhite'}`}
+                          className={`px-2 py-1 rounded transition-colors ${currency === curr ? 'bg-softRed/20 text-softRed font-bold' : 'hover:bg-offWhite'}`}
                          >
                            {curr}
                          </button>
@@ -77,7 +77,7 @@ const Navbar = () => {
                          <button
                           key={lang}
                           onClick={() => setLanguage(lang)}
-                          className={`px-2 py-1 rounded transition-colors ${language === lang ? 'bg-forestGreen/20 text-forestGreen font-bold' : 'hover:bg-offWhite'}`}
+                          className={`px-2 py-1 rounded transition-colors ${language === lang ? 'bg-softRed/20 text-softRed font-bold' : 'hover:bg-offWhite'}`}
                          >
                            {lang}
                          </button>
@@ -88,7 +88,7 @@ const Navbar = () => {
              )}
           </div>
 
-          <button className="magnetic-btn bg-forestGreen text-pureWhite px-6 py-2 rounded-full font-sans uppercase tracking-widest text-xs font-semibold hover:bg-forestGreen/90 transition-colors shadow-md">
+          <button className="magnetic-btn bg-softRed text-pureWhite px-6 py-2 rounded-full font-sans uppercase tracking-widest text-xs font-semibold hover:bg-softRed/90 transition-colors shadow-md">
             <span className="relative z-10">Book Now</span>
           </button>
         </div>

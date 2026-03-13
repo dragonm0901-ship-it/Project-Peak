@@ -20,7 +20,7 @@ const TrekkingPlanner = () => {
       case 1:
         return (
           <div className="flex flex-col gap-6 animate-fadeIn">
-            <h3 className="font-drama text-4xl text-richBlue italic mb-2">Select Difficulty</h3>
+            <h3 className="font-sans text-4xl text-richBlue italic mb-2">Select Difficulty</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {['Easy', 'Moderate', 'Challenging'].map((level) => (
                 <button
@@ -28,7 +28,7 @@ const TrekkingPlanner = () => {
                   onClick={() => handleSelect('difficulty', level)}
                   className={`p-6 rounded-2xl border-2 transition-all duration-300 font-sans font-semibold tracking-wide ${
                     selections.difficulty === level
-                      ? 'border-forestGreen bg-forestGreen/10 text-forestGreen'
+                      ? 'border-softRed bg-softRed/10 text-softRed'
                       : 'border-richBlue/10 bg-offWhite text-richBlue hover:border-richBlue/30'
                   }`}
                 >
@@ -41,7 +41,7 @@ const TrekkingPlanner = () => {
       case 2:
         return (
           <div className="flex flex-col gap-6 animate-fadeIn">
-            <h3 className="font-drama text-4xl text-richBlue italic mb-2">Duration (Days)</h3>
+            <h3 className="font-sans text-4xl text-richBlue italic mb-2">Duration (Days)</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {['< 7 Days', '7-14 Days', '> 14 Days'].map((duration) => (
                 <button
@@ -49,7 +49,7 @@ const TrekkingPlanner = () => {
                   onClick={() => handleSelect('duration', duration)}
                   className={`p-6 rounded-2xl border-2 transition-all duration-300 font-sans font-semibold tracking-wide ${
                     selections.duration === duration
-                      ? 'border-forestGreen bg-forestGreen/10 text-forestGreen'
+                      ? 'border-softRed bg-softRed/10 text-softRed'
                       : 'border-richBlue/10 bg-offWhite text-richBlue hover:border-richBlue/30'
                   }`}
                 >
@@ -62,7 +62,7 @@ const TrekkingPlanner = () => {
       case 3:
         return (
           <div className="flex flex-col gap-6 animate-fadeIn">
-            <h3 className="font-drama text-4xl text-richBlue italic mb-2">Estimated Budget</h3>
+            <h3 className="font-sans text-4xl text-richBlue italic mb-2">Estimated Budget</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {['Economy', 'Standard', 'Luxury'].map((budget) => (
                 <button
@@ -70,7 +70,7 @@ const TrekkingPlanner = () => {
                   onClick={() => handleSelect('budget', budget)}
                   className={`p-6 rounded-2xl border-2 transition-all duration-300 font-sans font-semibold tracking-wide ${
                     selections.budget === budget
-                      ? 'border-forestGreen bg-forestGreen/10 text-forestGreen'
+                      ? 'border-softRed bg-softRed/10 text-softRed'
                       : 'border-richBlue/10 bg-offWhite text-richBlue hover:border-richBlue/30'
                   }`}
                 >
@@ -83,10 +83,10 @@ const TrekkingPlanner = () => {
       case 4:
         return (
           <div className="flex flex-col items-center gap-6 animate-fadeIn text-center">
-             <div className="w-20 h-20 rounded-full bg-forestGreen/20 flex items-center justify-center mb-4">
-                <svg className="w-10 h-10 text-forestGreen" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+             <div className="w-20 h-20 rounded-full bg-softRed/20 flex items-center justify-center mb-4">
+                <svg className="w-10 h-10 text-softRed" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
              </div>
-             <h3 className="font-drama text-4xl text-richBlue italic mb-2">Curated Just For You</h3>
+             <h3 className="font-sans text-4xl text-richBlue italic mb-2">Curated Just For You</h3>
              <p className="font-sans text-richBlue/70 max-w-md">Based on your selections ({selections.difficulty}, {selections.duration}, {selections.budget}), we recommend the <strong>Annapurna Base Camp Trek</strong>.</p>
              <button className="mt-4 bg-softRed text-pureWhite px-8 py-4 rounded-full font-sans font-semibold tracking-wide uppercase hover:bg-softRed/90 transition-colors shadow-lg">
                 View Itinerary
@@ -112,7 +112,7 @@ const TrekkingPlanner = () => {
                 {[1, 2, 3].map((num) => (
                   <div key={num} className="flex items-center gap-4">
                     <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm transition-colors ${
-                      step >= num ? 'bg-forestGreen text-pureWhite' : 'bg-pureWhite/20 text-pureWhite/50'
+                      step >= num ? 'bg-softRed text-pureWhite' : 'bg-pureWhite/20 text-pureWhite/50'
                     }`}>
                       {num}
                     </div>
@@ -153,7 +153,7 @@ const TrekkingPlanner = () => {
                  <button
                   onClick={nextStep}
                   disabled={!selections.budget}
-                  className="bg-forestGreen text-pureWhite px-8 py-3 rounded-full font-sans font-semibold uppercase tracking-wider text-sm hover:bg-forestGreen/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed ml-auto"
+                  className="bg-softRed text-pureWhite px-8 py-3 rounded-full font-sans font-semibold uppercase tracking-wider text-sm hover:bg-softRed/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed ml-auto"
                  >
                    Generate Plan
                  </button>

@@ -6,8 +6,8 @@ const WhatsAppFloat = () => {
       {/* Tooltip */}
       <div className="absolute right-full mr-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap bg-pureWhite text-richBlue px-4 py-2 rounded-xl shadow-xl font-sans text-sm font-semibold flex items-center gap-2">
         <span className="relative flex h-3 w-3">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-forestGreen opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-3 w-3 bg-forestGreen"></span>
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-softRed opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-3 w-3 bg-softRed"></span>
         </span>
         Trekking Advice
       </div>
