@@ -3,12 +3,35 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Destinations from './components/Destinations';
 import FeaturesBox from './components/FeaturesBox';
+import ItineraryPlanner from './components/ItineraryPlanner';
+import GearChecker from './components/GearChecker';
+import WeatherWidget from './components/WeatherWidget';
+import Testimonials from './components/Testimonials';
+import CTA from './components/CTA';
 import Footer from './components/Footer';
 import Lenis from 'lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { MessageCircle } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
+
+const WhatsAppFloat = () => {
+  const handleClick = () => {
+    const message = "Hi! I'd like to learn more about your trekking packages in Nepal.";
+    window.open(`https://wa.me/9779801234567?text=${encodeURIComponent(message)}`, '_blank');
+  };
+
+  return (
+    <button
+      onClick={handleClick}
+      className="fixed bottom-6 right-6 z-[80] bg-[#25D366] hover:bg-[#20BD5A] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all hover:scale-110"
+      aria-label="Chat on WhatsApp"
+    >
+      <MessageCircle size={24} />
+    </button>
+  );
+};
 
 const AltitudeProgress = () => {
   useEffect(() => {
@@ -25,49 +48,11 @@ const AltitudeProgress = () => {
   }, []);
 
   return (
-    <div className="fixed right-4 top-1/4 bottom-1/4 w-1 bg-black/10 dark:bg-white/10 rounded-full z-[90] hidden md:block">
-      <div className="trail-hiker absolute top-0 -left-2 w-5 h-5 bg-peakGreen rounded-full shadow-[0_0_10px_rgba(22,101,52,0.5)] flex items-center justify-center">
+    <div className="fixed right-4 top-1/4 bottom-1/4 w-0.5 bg-black/10 dark:bg-white/10 rounded-full z-[80] hidden md:block">
+      <div className="trail-hiker absolute top-0 -left-1.5 w-4 h-4 bg-peakGreen rounded-full shadow-[0_0_8px_rgba(22,101,52,0.5)] flex items-center justify-center">
         <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
       </div>
     </div>
-  );
-};
-
-const CustomCursor = () => {
-  useEffect(() => {
-    const cursor = document.querySelector('.custom-cursor');
-    const moveCursor = (e) => {
-      gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.1 });
-    };
-    window.addEventListener('mousemove', moveCursor);
-
-    const checkHover = () => {
-        const interactiveElements = document.querySelectorAll('a, button, .hover-target, .destination-card, .bento-item, select');
-        interactiveElements.forEach(el => {
-            // Prevent binding multiple times
-            if (!el.hasAttribute('data-cursor-bound')) {
-                el.setAttribute('data-cursor-bound', 'true');
-                el.addEventListener('mouseenter', () => {
-                   gsap.to(cursor, { scale: 3, backgroundColor: 'rgba(255,255,255,0.1)', border: '1px solid white' });
-                });
-                el.addEventListener('mouseleave', () => {
-                   gsap.to(cursor, { scale: 1, backgroundColor: 'white', border: 'none' });
-                });
-            }
-        });
-    }
-    
-    // Check initial and then on small delay for dynamic content
-    checkHover();
-    setTimeout(checkHover, 1000);
-
-    return () => {
-      window.removeEventListener('mousemove', moveCursor);
-    };
-  }, []);
-
-  return (
-    <div className="custom-cursor fixed top-0 left-0 w-3 h-3 bg-white rounded-full pointer-events-none z-[9999] mix-blend-difference -translate-x-1/2 -translate-y-1/2 shadow-[0_0_8px_rgba(255,255,255,0.8)]"></div>
   );
 };
 
@@ -92,13 +77,21 @@ function App() {
 
   return (
     <>
-      <CustomCursor />
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-peakGreen focus:text-white focus:px-4 focus:py-2 focus:rounded">
+        Skip to content
+      </a>
       <AltitudeProgress />
+      <WhatsAppFloat />
       <Navbar />
-      <main>
+      <main id="main-content">
         <Hero />
         <Destinations />
+        <ItineraryPlanner />
         <FeaturesBox />
+        <WeatherWidget />
+        <GearChecker />
+        <Testimonials />
+        <CTA />
       </main>
       <Footer />
     </>
