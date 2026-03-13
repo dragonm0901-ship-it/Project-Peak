@@ -46,7 +46,7 @@ const Preloader = ({ onComplete }) => {
         ref={textRef}
         className="relative z-10 font-drama text-ghost text-6xl md:text-8xl italic opacity-0 translate-y-10"
       >
-        Aura
+        We Travel Nepal
       </div>
     </div>
   );
@@ -192,14 +192,14 @@ const Navbar = () => {
   return (
     <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 w-full">
       <nav ref={navRef} className="flex items-center justify-between px-6 py-3 rounded-full transition-all duration-300 w-full max-w-4xl text-ghost">
-        <div className="font-drama text-2xl brand-text tracking-widest italic">Aura</div>
+        <div className="font-drama text-2xl brand-text tracking-widest italic">We Travel Nepal</div>
         <div className="hidden md:flex gap-8 items-center font-sans uppercase tracking-widest text-xs">
-          <a href="#features" className="nav-link hover-lift">Design</a>
-          <a href="#philosophy" className="nav-link hover-lift">Craft</a>
-          <a href="#protocol" className="nav-link hover-lift">Atelier</a>
+          <a href="#features" className="nav-link hover-lift">Destinations</a>
+          <a href="#philosophy" className="nav-link hover-lift">Tours</a>
+          <a href="#protocol" className="nav-link hover-lift">About</a>
         </div>
         <button className="magnetic-btn bg-plasma text-deepVoid px-6 py-2 rounded-full font-sans uppercase tracking-widest text-xs font-semibold">
-          <span className="relative z-10">Discover</span>
+          <span className="relative z-10">Book Now</span>
         </button>
       </nav>
     </div>
@@ -227,7 +227,7 @@ const Hero = ({ isReady }) => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2000&auto=format&fit=crop"
+          src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=2000&auto=format&fit=crop"
           alt="Luxury Architecture"
           className="w-full h-full object-cover object-center grayscale opacity-80"
         />
@@ -238,18 +238,18 @@ const Hero = ({ isReady }) => {
       <div className="relative z-10 w-full max-w-4xl">
         <div className="flex flex-col gap-2 mb-8">
           <h1 className="hero-el text-ghost font-sans font-light text-4xl md:text-6xl tracking-widest leading-none uppercase">
-            Elegance beyond
+            Journey beyond
           </h1>
           <h1 className="hero-el text-plasma font-drama text-7xl md:text-[8rem] leading-none -ml-2 italic">
-            Time.
+            Limits.
           </h1>
         </div>
         <div className="hero-el max-w-xl">
           <p className="text-ghost/80 font-sans font-light text-sm md:text-base leading-relaxed mb-8 tracking-wide">
-            Aura — a timeless architecture. Designing elegance inside a physical frontier. The next evolution of luxury.
+            We Travel Nepal — discover the untouched beauty. Exploring the Himalayas and rich heritage. The ultimate adventure.
           </p>
           <button className="magnetic-btn bg-plasma text-deepVoid px-8 py-4 rounded-full font-sans uppercase tracking-widest font-semibold text-sm flex items-center gap-2 hover-lift">
-            <span className="relative z-10">Discover Collection</span>
+            <span className="relative z-10">Discover Destinations</span>
             <svg className="relative z-10 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
           </button>
         </div>
@@ -286,8 +286,8 @@ const Features = () => {
     <section id="features" ref={containerRef} className="py-32 px-8 md:px-16 w-full flex justify-center bg-ghost relative z-10">
       <div className="w-full max-w-6xl">
         <div className="mb-24 flex flex-col items-center text-center">
-          <h2 className="font-drama text-4xl md:text-6xl text-graphite mb-6 tracking-wide italic">The Aura Standard</h2>
-          <p className="font-sans font-light text-graphite/60 text-sm md:text-base max-w-xl tracking-wide uppercase">Craftsmanship elevated beyond mere creation. A philosophy of meticulous detail and uncompromising quality.</p>
+          <h2 className="font-drama text-4xl md:text-6xl text-graphite mb-6 tracking-wide italic">The Nepal Standard</h2>
+          <p className="font-sans font-light text-graphite/60 text-sm md:text-base max-w-xl tracking-wide uppercase">Adventures elevated beyond mere travel. A philosophy of meticulous planning and unforgettable experiences.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -295,31 +295,31 @@ const Features = () => {
           {/* Card 1 */}
           <div className="bg-ghost rounded-[1rem] p-10 border border-graphite/5 flex flex-col hover-lift group">
             <div className="feature-img-container h-48 mb-8 overflow-hidden rounded-lg relative">
-               <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1000&auto=format&fit=crop" className="absolute top-[-20%] left-0 w-full h-[140%] object-cover grayscale opacity-80 group-hover:grayscale-0 transition-all duration-700" alt="Timeless Design" />
+               <img src="https://images.unsplash.com/photo-1585016495481-91613a3ab1bc?q=80&w=1000&auto=format&fit=crop" className="absolute top-[-20%] left-0 w-full h-[140%] object-cover grayscale opacity-80 group-hover:grayscale-0 transition-all duration-700" alt="Thrilling Treks" />
             </div>
-            <span className="font-sans text-plasma text-xs tracking-widest uppercase mb-4">01 / Foundation</span>
+            <span className="font-sans text-plasma text-xs tracking-widest uppercase mb-4">01 / Treks</span>
             <h3 className="font-drama text-3xl text-graphite mb-4 italic">Timeless Design</h3>
-            <p className="font-sans font-light text-sm text-graphite/70 leading-relaxed">Silhouettes engineered to endure. We eschew fleeting trends in favor of classical proportions reimagined for the modern era.</p>
+            <p className="font-sans font-light text-sm text-graphite/70 leading-relaxed">Trails engineered to endure. We eschew fleeting trends in favor of classical paths reimagined for the modern explorer.</p>
           </div>
 
           {/* Card 2 */}
           <div className="bg-ghost rounded-[1rem] p-10 border border-graphite/5 flex flex-col hover-lift group mt-0 md:mt-12">
             <div className="feature-img-container h-48 mb-8 overflow-hidden rounded-lg relative">
-               <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000&auto=format&fit=crop" className="absolute top-[-20%] left-0 w-full h-[140%] object-cover grayscale opacity-80 group-hover:grayscale-0 transition-all duration-700" alt="Exquisite Craftsmanship" />
+               <img src="https://images.unsplash.com/photo-1572095945892-0b165b53e77f?q=80&w=1000&auto=format&fit=crop" className="absolute top-[-20%] left-0 w-full h-[140%] object-cover grayscale opacity-80 group-hover:grayscale-0 transition-all duration-700" alt="Rich Heritage" />
             </div>
-            <span className="font-sans text-plasma text-xs tracking-widest uppercase mb-4">02 / Execution</span>
+            <span className="font-sans text-plasma text-xs tracking-widest uppercase mb-4">02 / Heritage</span>
             <h3 className="font-drama text-3xl text-graphite mb-4 italic">Exquisite Craftsmanship</h3>
-            <p className="font-sans font-light text-sm text-graphite/70 leading-relaxed">Each piece is a testament to the artisan's touch. Forged, cut, and shaped by hands dedicated to absolute mastery of their medium.</p>
+            <p className="font-sans font-light text-sm text-graphite/70 leading-relaxed">Each temple is a testament to the artisan's touch. Built and shaped by hands dedicated to absolute mastery of their culture.</p>
           </div>
 
           {/* Card 3 */}
           <div className="bg-ghost rounded-[1rem] p-10 border border-graphite/5 flex flex-col hover-lift group mt-0 md:mt-24">
             <div className="feature-img-container h-48 mb-8 overflow-hidden rounded-lg relative">
-               <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1000&auto=format&fit=crop" className="absolute top-[-20%] left-0 w-full h-[140%] object-cover grayscale opacity-80 group-hover:grayscale-0 transition-all duration-700" alt="Unparalleled Detail" />
+               <img src="https://images.unsplash.com/photo-1506462945848-ac8ea6f609cc?q=80&w=1000&auto=format&fit=crop" className="absolute top-[-20%] left-0 w-full h-[140%] object-cover grayscale opacity-80 group-hover:grayscale-0 transition-all duration-700" alt="Untamed Wilderness" />
             </div>
-            <span className="font-sans text-plasma text-xs tracking-widest uppercase mb-4">03 / Refinement</span>
+            <span className="font-sans text-plasma text-xs tracking-widest uppercase mb-4">03 / Wilderness</span>
             <h3 className="font-drama text-3xl text-graphite mb-4 italic">Unparalleled Detail</h3>
-            <p className="font-sans font-light text-sm text-graphite/70 leading-relaxed">Perfection resides in the microcosm. We obsess over the unseen elements as fiercely as the visible, ensuring profound harmony.</p>
+            <p className="font-sans font-light text-sm text-graphite/70 leading-relaxed">Perfection resides in the wild. We obsess over the unseen elements as fiercely as the visible, ensuring profound harmony with nature.</p>
           </div>
 
         </div>
@@ -391,7 +391,7 @@ const Philosophy = () => {
       {/* Parallax Background */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <img 
-          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2000&auto=format&fit=crop"
+          src="https://images.unsplash.com/photo-1572095945892-0b165b53e77f?q=80&w=2000&auto=format&fit=crop"
           alt="Luxury material texture"
           className="parallax-bg w-full h-[130%] object-cover object-center opacity-30 grayscale"
         />
@@ -400,11 +400,11 @@ const Philosophy = () => {
 
       <div className="relative z-10 w-full max-w-5xl text-center flex flex-col items-center">
         <p className="manifesto-text font-sans font-light text-ghost/50 text-sm md:text-base mb-8 tracking-widest uppercase">
-          The true essence of luxury lies within.
+          The true essence of adventure lies within.
         </p>
         <p className="font-drama text-5xl md:text-7xl lg:text-[6rem] text-ghost leading-[1.1] tracking-wide">
-          <SplitText>We focus on</SplitText> <SplitText className="text-plasma italic pr-4">structural elegance</SplitText> <br/>
-          <SplitText>and absolute perfection.</SplitText>
+          <SplitText>We focus on</SplitText> <SplitText className="text-plasma italic pr-4">untouched trails</SplitText> <br/>
+          <SplitText>and unforgettable memories.</SplitText>
         </p>
       </div>
     </section>
@@ -448,13 +448,13 @@ const Atelier = () => {
       <div className="protocol-card h-[100dvh] w-full flex items-center justify-center sticky top-0 bg-ghost px-8 md:px-16 border-b border-graphite/5">
         <div className="w-full max-w-5xl flex flex-col md:flex-row items-center gap-16">
           <div className="flex-1 w-full h-[30rem] relative flex items-center justify-center overflow-hidden rounded-2xl shadow-xl">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop" className="w-full h-full object-cover grayscale opacity-90 hover:scale-105 transition-transform duration-[1.5s]" alt="Material Selection" />
+            <img src="https://images.unsplash.com/photo-1572095945892-0b165b53e77f?q=80&w=1200&auto=format&fit=crop" className="w-full h-full object-cover grayscale opacity-90 hover:scale-105 transition-transform duration-[1.5s]" alt="Material Selection" />
           </div>
           <div className="flex-1">
             <span className="font-sans text-plasma text-xs uppercase tracking-widest mb-4 block">Stage 01</span>
-            <h2 className="font-drama text-4xl md:text-5xl text-graphite mb-6 italic">Curation of Elements</h2>
+            <h2 className="font-drama text-4xl md:text-5xl text-graphite mb-6 italic">Arrival & Exploration</h2>
             <p className="font-sans font-light text-graphite/70 leading-relaxed text-sm md:text-base">
-              Only the most exceptional materials are chosen. A rigorous selection process ensures absolute harmony before the first incision is made.
+              Only the most exceptional places are chosen. A rigorous selection process ensures absolute harmony before the first trek is made.
             </p>
           </div>
         </div>
@@ -464,13 +464,13 @@ const Atelier = () => {
       <div className="protocol-card h-[100dvh] w-full flex items-center justify-center sticky top-0 bg-ghost px-8 md:px-16 border-b border-graphite/5">
         <div className="w-full max-w-5xl flex flex-col md:flex-row-reverse items-center gap-16">
           <div className="flex-1 w-full h-[30rem] relative flex items-center justify-center overflow-hidden rounded-2xl shadow-xl">
-             <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1200&auto=format&fit=crop" className="w-full h-full object-cover grayscale opacity-90 hover:scale-105 transition-transform duration-[1.5s]" alt="Design Process" />
+             <img src="https://images.unsplash.com/photo-1585016495481-91613a3ab1bc?q=80&w=1200&auto=format&fit=crop" className="w-full h-full object-cover grayscale opacity-90 hover:scale-105 transition-transform duration-[1.5s]" alt="Design Process" />
           </div>
           <div className="flex-1 text-left md:text-right">
             <span className="font-sans text-plasma text-xs uppercase tracking-widest mb-4 block">Stage 02</span>
-            <h2 className="font-drama text-4xl md:text-5xl text-graphite mb-6 italic">The Master's Cut</h2>
+            <h2 className="font-drama text-4xl md:text-5xl text-graphite mb-6 italic">The Himalayan Trek</h2>
             <p className="font-sans font-light text-graphite/70 leading-relaxed text-sm md:text-base">
-              Decades of refined intuition guide the tools. The raw potential is slowly coaxed into a silhouette of defining elegance.
+              Decades of refined intuition guide the trails. The raw potential is slowly coaxed into an adventure of defining elegance.
             </p>
           </div>
         </div>
@@ -480,13 +480,13 @@ const Atelier = () => {
       <div className="protocol-card h-[100dvh] w-full flex items-center justify-center sticky top-0 bg-ghost px-8 md:px-16">
         <div className="w-full max-w-5xl flex flex-col md:flex-row items-center gap-16">
           <div className="flex-1 w-full h-[30rem] relative flex items-center justify-center overflow-hidden rounded-2xl shadow-xl">
-             <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1200&auto=format&fit=crop" className="w-full h-full object-cover grayscale opacity-90 hover:scale-105 transition-transform duration-[1.5s]" alt="Final Polish" />
+             <img src="https://images.unsplash.com/photo-1506462945848-ac8ea6f609cc?q=80&w=1200&auto=format&fit=crop" className="w-full h-full object-cover grayscale opacity-90 hover:scale-105 transition-transform duration-[1.5s]" alt="Final Polish" />
           </div>
           <div className="flex-1">
             <span className="font-sans text-plasma text-xs uppercase tracking-widest mb-4 block">Stage 03</span>
-            <h2 className="font-drama text-4xl md:text-5xl text-graphite mb-6 italic">Final Radiance</h2>
+            <h2 className="font-drama text-4xl md:text-5xl text-graphite mb-6 italic">Rest & Reflection</h2>
             <p className="font-sans font-light text-graphite/70 leading-relaxed text-sm md:text-base">
-              The surface is brought to life. A final meticulous polish reveals the soul of the piece, ready to endure generations.
+              The journey is brought to life. A final meticulous rest reveals the soul of the adventurer, ready to endure generations.
             </p>
           </div>
         </div>
@@ -499,12 +499,12 @@ const CTA = () => {
   return (
     <section id="cta" className="py-48 px-8 md:px-16 w-full flex flex-col items-center justify-center bg-ghost relative z-10">
       <div className="max-w-3xl text-center flex flex-col items-center">
-        <h2 className="font-drama text-5xl md:text-7xl text-graphite mb-6 tracking-wide italic">Experience Aura.</h2>
+        <h2 className="font-drama text-5xl md:text-7xl text-graphite mb-6 tracking-wide italic">Experience Nepal.</h2>
         <p className="font-sans font-light text-graphite/60 text-sm md:text-base mb-12 max-w-xl uppercase tracking-widest leading-relaxed">
-          Arrange a private viewing to witness the culmination of design and absolute craftsmanship.
+          Arrange a private tour to witness the culmination of culture and absolute adventure.
         </p>
         <button className="magnetic-btn bg-plasma text-deepVoid px-10 py-5 rounded-full font-sans uppercase tracking-widest font-semibold text-sm flex items-center gap-3 hover-lift shadow-[0_10px_40px_-10px_#D4AF37]">
-          <span className="relative z-10">Request Invitation</span>
+          <span className="relative z-10">Request Booking</span>
           <svg className="relative z-10 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
         </button>
       </div>
@@ -517,27 +517,27 @@ const Footer = () => {
     <footer className="w-full bg-deepVoid text-ghost rounded-t-[4rem] px-8 md:px-16 pt-24 pb-12 relative z-20 mt-[-4rem]">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-16 mb-24">
         <div className="flex-1">
-          <h2 className="font-drama text-4xl mb-4 tracking-widest italic">Aura</h2>
+          <h2 className="font-drama text-4xl mb-4 tracking-widest italic">We Travel Nepal</h2>
           <p className="font-sans font-light text-sm text-ghost/60 max-w-xs leading-relaxed uppercase tracking-wider">
-            Designing elegance inside a physical frontier.
+            Designing adventures inside a natural frontier.
           </p>
         </div>
         <div className="flex gap-16 font-sans text-sm tracking-widest uppercase">
           <div className="flex flex-col gap-4">
              <span className="text-plasma mb-2 font-semibold">Discover</span>
-             <a href="#features" className="text-ghost/70 hover:text-plasma transition-colors">Design</a>
-             <a href="#philosophy" className="text-ghost/70 hover:text-plasma transition-colors">Craft</a>
-             <a href="#protocol" className="text-ghost/70 hover:text-plasma transition-colors">Atelier</a>
+             <a href="#features" className="text-ghost/70 hover:text-plasma transition-colors">Destinations</a>
+             <a href="#philosophy" className="text-ghost/70 hover:text-plasma transition-colors">Tours</a>
+             <a href="#protocol" className="text-ghost/70 hover:text-plasma transition-colors">About</a>
           </div>
           <div className="flex flex-col gap-4">
              <span className="text-plasma mb-2 font-semibold">House</span>
-             <a href="#" className="text-ghost/70 hover:text-plasma transition-colors">Boutiques</a>
+             <a href="#" className="text-ghost/70 hover:text-plasma transition-colors">Contact</a>
              <a href="#" className="text-ghost/70 hover:text-plasma transition-colors">Contact</a>
           </div>
         </div>
       </div>
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center pt-8 border-t border-graphite/20 gap-4">
-        <div className="font-sans font-light text-xs text-ghost/40 tracking-wider">© {new Date().getFullYear()} Aura Design Studio. All rights reserved.</div>
+        <div className="font-sans font-light text-xs text-ghost/40 tracking-wider">© {new Date().getFullYear()} We Travel Nepal. All rights reserved.</div>
       </div>
     </footer>
   );
