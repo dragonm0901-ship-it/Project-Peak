@@ -3,12 +3,22 @@
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply bg-ghost text-graphite overflow-x-hidden cursor-none;
+  :root {
+    --bg-color: #f8fafc;
+    --text-color: #0f172a;
+    --border-color: rgba(15, 23, 42, 0.1);
   }
 
-  a, button, input, textarea {
-    @apply cursor-none;
+  .dark {
+    --bg-color: #020617;
+    --text-color: #f8fafc;
+    --border-color: rgba(248, 250, 252, 0.1);
+  }
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    @apply overflow-x-hidden transition-colors duration-300;
   }
 }
 
@@ -18,7 +28,7 @@
 
 .magnetic-btn::before {
   content: "";
-  @apply absolute inset-0 bg-white/20 -translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)];
+  @apply absolute inset-0 bg-black/10 dark:bg-white/10 -translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)];
 }
 
 .magnetic-btn:hover::before {
@@ -30,5 +40,9 @@
 }
 
 .hover-lift:hover {
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+}
+
+.clip-reveal {
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
 }

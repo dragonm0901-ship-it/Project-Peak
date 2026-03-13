@@ -4,18 +4,19 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        deepVoid: '#121212', // deepCharcoal
-        plasma: '#D4AF37',   // mutedGold
-        ghost: '#FAFAFA',    // cream
-        graphite: '#1A1A1A'  // slightly lighter charcoal
+        peakDeep: '#0f172a', // deep blue/slate
+        peakGreen: '#166534', // forest green
+        peakRed: '#991b1b', // soft red
+        peakWhite: '#f8fafc', // snow white
+        peakDark: '#020617', // dark mode background
       },
       fontFamily: {
-        sans: ['Sora', 'sans-serif'],
-        drama: ['"Instrument Serif"', 'serif'],
-        mono: ['"Fira Code"', 'monospace'],
+        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+        display: ['"Syne"', 'sans-serif'],
       }
     },
   },
