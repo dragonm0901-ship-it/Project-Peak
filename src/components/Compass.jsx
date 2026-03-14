@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { X, Navigation } from 'lucide-react';
+import { X, Compass as CompassIcon } from 'lucide-react';
 
 const Compass = ({ isOpen, onClose }) => {
   const [heading, setHeading] = useState(0);
@@ -166,7 +166,7 @@ const Compass = ({ isOpen, onClose }) => {
         <div className="flex flex-col items-center">
           {permissionState === 'prompt' && (
             <div className="text-center py-8">
-              <Navigation size={48} className="text-peakGreen mx-auto mb-4" />
+              <CompassIcon size={48} className="text-peakGreen mx-auto mb-4" />
               <p className="font-sans text-sm text-peakDeep/70 dark:text-peakWhite/70 mb-6">
                 Grant access to your device sensors to use the compass.
               </p>

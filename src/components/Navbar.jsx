@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { useTheme } from '../context/ThemeContext';
 import { useSettings } from '../context/SettingsContext';
-import { Sun, Cloud, Menu, X, Navigation } from 'lucide-react';
+import { Sun, Cloud, Menu, X, Compass as CompassIcon } from 'lucide-react';
 import gsap from 'gsap';
 
 const Navbar = ({ onCompassOpen }) => {
@@ -72,7 +72,7 @@ const Navbar = ({ onCompassOpen }) => {
             className="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
             aria-label="Open compass"
           >
-            <Navigation size={18} />
+            <CompassIcon size={18} />
           </button>
 
           <button 
@@ -108,7 +108,7 @@ const Navbar = ({ onCompassOpen }) => {
           ))}
           <button onClick={() => { onCompassOpen(); setMobileOpen(false); }}
             className="font-sans text-lg font-semibold py-2 border-b border-black/5 dark:border-white/10 hover:text-peakGreen transition-colors text-left flex items-center gap-2">
-            <Navigation size={18} /> Compass
+            <CompassIcon size={18} /> Compass
           </button>
           
           <div className="flex gap-3 pt-2">
